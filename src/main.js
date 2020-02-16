@@ -1,17 +1,8 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router';
-import App from './components/App.vue'
-
-Vue.use(VueRouter);
-
-require('./routes')
-
-const router = new VueRouter({
-  routes
-})
+import App from './App.vue'
+import router from './router'
 
 new Vue({
-  el: '#app',
-  render: h => h(App),
-  router
-})
+  router,
+  render: h => h(App)
+}).$mount('#app')
