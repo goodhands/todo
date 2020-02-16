@@ -1,0 +1,48 @@
+@import '~bulma/bulma';
+
+.color{
+    .red{
+        color: red;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .navbar-burger {
+        display: block;
+    }
+}
+
+nav.navbar {
+    border-bottom: .4px solid #eee;
+    padding: 2px;
+}
+
+.sidebar{
+    border-right: .4px solid #eee;
+    height: 100vh;
+    padding: 2rem;
+
+    .item-between{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.side-menu{
+    li {
+        margin-bottom: 5px;
+        a{
+            display: block;
+            padding: 5px 15px;
+            width: 100%;
+            color: #000 !important;
+            border-radius: 2px;
+            font-size: 14px;
+            transition: all 200ms;
+            
+            &:hover{
+                background-color: #F5F2F2;
+            }
+        }
+    }
+}
