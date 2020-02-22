@@ -10,9 +10,9 @@ export default new VueRouter({
         component: require('../components/Home.vue').default,
       },
       {
-        path: '/posts',
-        name: 'Foo',
-        component: require('../components/Foo.vue').default
+        path: '/register',
+        name: 'Register',
+        component: require('../components/Signup.vue').default
       }
     ]
   })

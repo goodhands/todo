@@ -2,7 +2,7 @@
     <div>
         <h2 class="title is-5 item-between">
             My Tasks 
-            <a href="#">+</a>
+            <router-link to="/">+</router-link>
         </h2>
 
         <ul class="side-menu">

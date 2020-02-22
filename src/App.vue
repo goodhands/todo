@@ -8,6 +8,9 @@
       <div class="column">
         <router-view></router-view>
       </div>
+       <div class="column is-one-fifth left sidebar">
+        <Sidebar/>
+      </div>
     </div>
   </div>
 </template>

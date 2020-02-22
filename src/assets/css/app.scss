@@ -39,10 +39,49 @@ nav.navbar {
             border-radius: 2px;
             font-size: 14px;
             transition: all 200ms;
-            
+
             &:hover{
                 background-color: #F5F2F2;
             }
         }
     }
+}
+
+.column.is-one-fifth.left.sidebar {
+    border-left: .4px solid #eee;
+}
+
+.card{
+    padding: 10px;
+    border-radius: 3px;
+    transition: all 500ms;
+
+    h2{
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    span{
+        color: #fff;
+    }
+
+    &:hover{
+        box-shadow: none;
+    }
+}
+
+.text-grey{
+    color: #ddd;
+}
+
+.bg-todo{
+    background-color: blueviolet;
+}
+
+.bg-upcoming{
+    background-color: burlywood;
+}
+
+.bg-past{
+    
 }
