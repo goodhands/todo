@@ -17,9 +17,6 @@ module.exports = {
       deadline: {
         type: Sequelize.DATE
       },
-      user_id: {
-        type: Sequelize.INTEGER
-      },
       status: {
         type: Sequelize.STRING
       },
@@ -30,7 +27,16 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
-      }
+      },
+      user_id: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Users',
+          key: 'id',
+          as: 'user_id',
+        },
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
