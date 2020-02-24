@@ -19,7 +19,7 @@ export default {
 
         category:{
             type: String,
-            required: true,
+            // required: true,
             default: 'todo'
         }
     },
@@ -31,7 +31,7 @@ export default {
     },
 
     mounted() {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.post('http://localhost:3000/users')
         .then((result) => {
             this.users = result.data
         })

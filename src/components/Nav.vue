@@ -11,16 +11,36 @@
                     <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
                 </a>
             </div>
-            <div class="navbar-menu">
+            <div class="navbar-menu nav-center">
                 <div class="navbar-start">
-                    <a class="navbar-item">
-                        Home
-                    </a>
+                    <router-link to="/tasks" class="navbar-item">
+                        My Todo
+                    </router-link>
                 </div>
             </div>
             <div class="navbar-settings">
-                <a href="#">Profile</a>
+                <router-link to="/todo/new" class="add-new-task">+</router-link>
+                <span href="#" class="user-action-area" @mouseenter="showUserArea = true">
+                    <ul @mouseleave="showUserArea = false" v-if="showUserArea">
+                        <li>
+                            <router-link to="/login">Sign in</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/login">Sign in</router-link>
+                        </li>
+                    </ul>
+                </span>
             </div>
         </nav>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            showUserArea: false
+        }
+    },
+}
+</script>

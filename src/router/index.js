@@ -12,6 +12,11 @@ export default new VueRouter({
       {
         path: '/register',
         name: 'Register',
+        component: require('../components/Register.vue').default
+      },
+      {
+        path: '/login',
+        name: 'Login',
         component: require('../components/Signup.vue').default
       }
     ]
