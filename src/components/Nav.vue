@@ -26,7 +26,7 @@
                             <router-link to="/login">Sign in</router-link>
                         </li>
                         <li>
-                            <router-link to="/login">Sign in</router-link>
+                            <router-link to="/register">Register</router-link>
                         </li>
                     </ul>
                 </span>

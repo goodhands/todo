@@ -1,6 +1,13 @@
-# vuecli
+# Node + Vue.js + PostgreSQL
+![vue-tdo-mockup](docs/todo-mockup.png)
 
-> Vue.js tutorial with Sarah Drasner
+> A minimal todo app showcasing the synergy between the frontend masterpiece - Vue and Node.
+
+## Functionalities
+* Single Page
+* User Accounts
+* Authentication with Passport.js
+* MVC with Sequelize ORM
 
 ## Build Setup
 
@@ -14,5 +21,3 @@ npm run dev
 # build for production with minification
 npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
