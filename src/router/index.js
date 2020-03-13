@@ -18,6 +18,15 @@ export default new VueRouter({
         path: '/login',
         name: 'Login',
         component: require('../components/Signup.vue').default
+      },
+      {
+        path: '/todo/',
+        name: 'All todo'
+      },
+      {
+        path: '/todo/new',
+        name: 'New todo',
+        component: require('../components/NewTodo.vue').default
       }
     ]
   })

@@ -6,7 +6,7 @@
   "private": true,
   "description": "",
   "scripts": {
-    "start:dev": "nodemon ./api/index.js"
+    "dev": "nodemon ./api/index.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

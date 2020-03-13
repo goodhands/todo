@@ -161,3 +161,31 @@ nav.navbar {
 .auth-page{
     margin: auto 150px;
 }
+
+.input{
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid rgb(173, 173, 173);
+    border-top: 0;
+    box-shadow: none;
+    outline: none !important;
+    padding: 0;
+    font-size: medium;
+    font-weight: 600;
+
+    &:active, &:focus{
+        outline: none !important;
+        outline: none !important;
+        outline-color: unset !important;
+        border-bottom-color: #bebebe !important;
+        box-shadow: none !important;
+    }
+}
+
+.modal{
+    margin: 0 auto;
+}
+
+.create-tasks{
+    margin-top: 30px;
+}
