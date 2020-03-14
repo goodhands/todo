@@ -206,3 +206,23 @@ nav.navbar {
 .create-tasks{
     margin-top: 30px;
 }
+
+.slideIn-enter-active, .slideIn-leave-active{  
+    animation-name: slideIn;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.slideIn-enter, .slideIn-leave-to{
+    opacity: 0;
+}
+
+@keyframes slideIn{
+    0%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}

@@ -13,22 +13,25 @@
 
                 <div class="tasks-list">
                     <ul v-if="tasks.length > 0">
-                        <li class="columns" v-for="task in tasks" :key="task.title">
-                            <div class="column is-9">
-                                <h2 class="title is-6">
-                                    {{task.title}}
-                                </h2>
-                                <p class="subtitle is-7">
-                                    {{task.deadline}}
-                                </p>
-                            </div>
-                            <div class="column is-2">
-                                <i class="is-pulled-right">status</i>
-                            </div>
-                            <div class="column is-flex is-center">
-                                <a @click="hideTask">&times;</a>
-                            </div>
-                        </li>
+                        <transition-group name="slideIn">
+                            <li class="columns" v-for="task in tasks" :key="task.title">
+                                <div class="column is-9">
+                                    <h2 class="title is-6">
+                                        {{task.title}}
+                                    </h2>
+                                    <p class="subtitle is-7">
+                                        {{task.deadline}}
+                                    </p>
+                                </div>
+                                <div class="column is-2">
+                                    <i class="is-pulled-right">status</i>
+                                </div>
+                                <div class="column is-flex is-center">
+                                    <a @click="hideTask">&times;</a>
+                                </div>
+                            </li>
+                        </transition-group>
+                        
                     </ul>
                 </div>
 
@@ -94,8 +97,8 @@ export default {
             this.taskStatus = '';
         },
 
-        hideTask(){
-            console.log("Hidden");
+        hideTask(el){
+            el.path[2].style.display = "none"
         },
 
         showTask(){
