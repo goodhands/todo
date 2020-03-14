@@ -9,7 +9,28 @@
                     <input type="text" placeholder="Title" v-model="todoTitle" class="input">
                 </div>
 
-                <a class="is-pulled-right" style="display: block" @click="showTask">+ Add new task</a>
+                <a class="is-pulled-right" @click="showTask">+ Add new task</a>
+
+                <div class="tasks-list">
+                    <ul v-if="tasks.length > 0">
+                        <li class="columns" v-for="task in tasks" :key="task.title">
+                            <div class="column is-9">
+                                <h2 class="title is-6">
+                                    {{task.title}}
+                                </h2>
+                                <p class="subtitle is-7">
+                                    {{task.deadline}}
+                                </p>
+                            </div>
+                            <div class="column is-2">
+                                <i class="is-pulled-right">status</i>
+                            </div>
+                            <div class="column is-flex is-center">
+                                <a @click="hideTask">&times;</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
                 <div class="create-tasks">                        
                     <div class="task" v-if="showTaskForm">
@@ -60,7 +81,21 @@ export default {
 
     methods: {
         saveTask(){
-            
+            this.tasks.push(
+                {
+                    title: this.taskTitle, 
+                    deadline : this.taskDeadline,
+                    status : this.taskStatus
+                }
+            );
+
+            this.taskTitle = '';
+            this.taskDeadline = '';
+            this.taskStatus = '';
+        },
+
+        hideTask(){
+            console.log("Hidden");
         },
 
         showTask(){
@@ -69,8 +104,5 @@ export default {
         }
     },
 
-    mounted() {
-        todoTitle.focus();
-    },
 }
 </script>
