@@ -3,13 +3,15 @@
         <div class="modal-background"></div>
         <div class="modal-content">
             <div class="box">
-                <h2 class="title">Create a new todo</h2>
+                <h2 class="title">
+                    Create a new todo
+                </h2>
                 <div class="group">
                     <label class="title is-6">Title</label>
                     <input type="text" placeholder="Title" v-model="todoTitle" class="input">
                 </div>
 
-                <a class="is-pulled-right" @click="showTask">+ Add new task</a>
+                <a class="is-pulled-right" @click="showTask">{{ showTaskForm ? "- Hide task form" : "+ Add new task"}}</a>
 
                 <div class="tasks-list">
                     <ul v-if="tasks.length > 0">
@@ -31,7 +33,6 @@
                                 </div>
                             </li>
                         </transition-group>
-                        
                     </ul>
                 </div>
 
@@ -59,11 +60,13 @@
                             </div>
                         </div>
 
-                        <button class="button" @click="saveTask">
+                        <button class="button is-small is-pulled-left is-link" @click="saveTask">
                             Save
                         </button>
                     </div>
                 </div>
+                <br>
+                <button class="button is-success" :disabled="formBusy" @click="saveTodo()">Save todo</button>
             </div>
         </div>
     </div>
@@ -78,12 +81,15 @@ export default {
             taskTitle: '',
             taskDeadline: '',
             taskStatus: '',
+            formBusy: true,
             tasks: []
         }
     },
 
     methods: {
         saveTask(){
+            if(this.taskTitle == "") return;
+
             this.tasks.push(
                 {
                     title: this.taskTitle, 
@@ -95,6 +101,8 @@ export default {
             this.taskTitle = '';
             this.taskDeadline = '';
             this.taskStatus = '';
+
+            this.showTask();
         },
 
         hideTask(el){
@@ -104,6 +112,16 @@ export default {
         showTask(){
             this.showTaskForm = !this.showTaskForm;
             return false;
+        },
+
+        saveTodo(){
+
+        }
+    },
+
+    watch: {
+        todoTitle(){
+            this.formBusy = this.todoTitle == "";
         }
     },
 
